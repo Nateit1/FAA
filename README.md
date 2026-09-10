@@ -97,5 +97,5 @@ open index.html   # or just double-click it
 
 ## 🔗 Links
 
-- 🌐 [Live Demo](#) <!-- replace # with your GitHub Pages URL once enabled -->
+- 🌐 [Live Demo](https://nateit1.github.io/FAA/index-2.html)
 - 📁 [Dataset Source](https://www.kaggle.com/datasets/usdot/flight-delays)
