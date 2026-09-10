@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Flight Status Dashboard</title>
+<style>
+  :root {
+    --ink: #232227;
+    --cream: #F6F3EC;
+    --paper: #FBFAF6;
+    --yellow: #EADC8E;
+    --teal: #5FC9C0;
+    --mute: #8B857A;
+    --track: #EAE6DA;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0; background: var(--paper);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: var(--ink);
+  }
+  #app { padding: 28px 32px; max-width: 1360px; margin: 0 auto; }
+
+  .header-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 22px; flex-wrap: wrap; gap: 8px; }
+  .title { font-size: 22px; font-family: Georgia, serif; font-weight: 700; }
+  .subtitle { font-size: 12.5px; color: var(--mute); margin-top: 2px; }
+  .clear-btn {
+    background: var(--ink); color: var(--cream); border: none; border-radius: 20px;
+    padding: 7px 16px; font-size: 12.5px; cursor: pointer; letter-spacing: 0.02em;
+  }
+  .clear-btn:hover { opacity: 0.85; }
+
+  .kpi-row { display: flex; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
+  .kpi { background: var(--ink); border-radius: 10px; padding: 18px 20px; flex: 1; min-width: 180px; }
+  .kpi-label { font-size: 11px; letter-spacing: 0.12em; color: #C9C4B7; margin-bottom: 8px; font-family: Georgia, serif; }
+  .kpi-value { font-size: 34px; font-weight: 700; font-family: Georgia, serif; line-height: 1; }
+  .kpi-sub { font-size: 11.5px; color: #9C978B; margin-top: 6px; }
+
+  .grid { display: grid; grid-template-columns: 1.15fr 1fr 1fr; gap: 22px; }
+  @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+
+  .panel-title { font-size: 12.5px; letter-spacing: 0.1em; color: #6B665C; margin-bottom: 10px; font-family: Georgia, serif; font-weight: 600; }
+
+  .bar-row { cursor: pointer; margin-bottom: 7px; }
+  .bar-label { font-size: 12px; margin-bottom: 3px; color: #55504A; }
+  .bar-label.sel { color: var(--ink); font-weight: 700; }
+  .bar-track { position: relative; height: 22px; background: var(--track); border-radius: 4px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 4px; background: #B7B1A2; display: flex; align-items: center; justify-content: flex-end; padding-right: 8px; transition: width 0.4s ease, background 0.2s ease; }
+  .bar-fill.sel { background: var(--ink); }
+  .bar-fill-text { font-size: 11px; color: var(--paper); font-weight: 600; }
+  .bar-fill.sel .bar-fill-text { color: var(--yellow); }
+
+  .airline-row { margin-bottom: 6px; }
+  .airline-label { font-size: 11.5px; margin-bottom: 2px; color: #55504A; }
+  .airline-track { position: relative; height: 19px; background: var(--track); border-radius: 4px; overflow: hidden; }
+  .airline-fill { height: 100%; border-radius: 4px; background: var(--ink); display: flex; align-items: center; justify-content: flex-end; padding-right: 8px; transition: width 0.4s ease; }
+  .airline-fill-text { font-size: 10.5px; color: var(--yellow); font-weight: 600; }
+
+  .legend { display: flex; align-items: center; gap: 6px; margin-bottom: 6px; flex-wrap: wrap; }
+  .legend-item { font-size: 10.5px; display: flex; align-items: center; gap: 4px; color: #55504A; }
+  .legend-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+
+  .donut-wrap { position: relative; width: 170px; height: 170px; margin: 0 auto; }
+  .donut-center { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); text-align: center; pointer-events: none; }
+  .donut-center-value { font-size: 20px; font-weight: 700; font-family: Georgia, serif; }
+  .donut-center-sub { font-size: 9.5px; color: var(--mute); }
+
+  .month-caption { font-size: 11px; color: var(--mute); margin-bottom: 4px; margin-top: 4px; }
+
+  .status-row { margin-top: 26px; }
+  .status-flex { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+  .status-card { background: var(--ink); border-radius: 10px; padding: 14px 22px; display: flex; gap: 26px; }
+  .status-stat { text-align: center; }
+  .status-num { font-size: 20px; font-weight: 700; font-family: Georgia, serif; }
+  .status-cap { font-size: 10px; color: #9C978B; margin-top: 2px; }
+  .status-bar { flex: 1; min-width: 240px; height: 46px; border-radius: 8px; overflow: hidden; display: flex; background: var(--ink); }
+  .status-seg { transition: width 0.4s ease; }
+
+  .footnote { margin-top: 20px; font-size: 10.5px; color: var(--mute); }
+</style>
+</head>
+<body>
+<div id="app"></div>
+
+<script src="dashboard.js"></script>
+</body>
+</html>
