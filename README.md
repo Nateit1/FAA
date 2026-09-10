@@ -12,13 +12,10 @@ This repo is a standalone web recreation of a Power BI dashboard I built on FAA 
 
 ---
 
-<img width="680" height="522" alt="Untitled 500" src="https://github.com/user-attachments/assets/eb4bcf3d-a856-43dd-88b5-8efd983c2b5d" />
-
 
 ### Dashboard Overview
 
-Untitled_500
-
+<img width="680" height="522" alt="Untitled 500" src="https://github.com/user-attachments/assets/eb4bcf3d-a856-43dd-88b5-8efd983c2b5d" />
 ---
 
 ## 🏗️ Data Pipeline
