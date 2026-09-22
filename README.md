@@ -97,5 +97,5 @@ open index.html   # or just double-click it
 
 ## 🔗 Links
 
-- 🌐 [Live Demo](https://nateit1.github.io/FAA/index-4.html)
+- 🌐 [Live Demo](https://huggingface.co/spaces/Natan1000/DAX)
 - 📁 [Dataset Source](https://www.kaggle.com/datasets/usdot/flight-delays)
